@@ -27,13 +27,14 @@
 Summary:	GnomeCanvas widget
 Name:		libgnomecanvas
 Version: 2.19.0
-Release: %mkrel 1
+Release: %mkrel 2
 License:	LGPL
 Group:		Graphical desktop/GNOME
 URL:		http://www.gnome.org/
 Buildroot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
+Patch: libgnomecanvas-2.19.0-pkgconfig.patch
 
 BuildRequires:	bison
 BuildRequires:	libgtk+2-devel >= %{req_gtk_version}
@@ -100,6 +101,7 @@ This package contains static library and header files for %{name}.
 
 %prep
 %setup -q
+%patch -p1
 
 %build
 
