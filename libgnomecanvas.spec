@@ -40,6 +40,7 @@ BuildRequires:	libgtk+2-devel >= %{req_gtk_version}
 BuildRequires:	libart_lgpl-devel >= %{req_libart_version}
 BuildRequires:	libpango-devel >= %{req_pango_version}
 BuildRequires:	libglade2.0-devel >= %{req_libglade_version}
+BuildRequires:	libgail-devel
 BuildRequires:	perl-XML-Parser
 %if %enable_gtkdoc
 BuildRequires:	gtk-doc
