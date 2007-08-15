@@ -22,12 +22,13 @@
 
 %define api_version	2
 %define lib_major	0
-%define lib_name	%mklibname gnomecanvas %{api_version} %{lib_major}
+%define libname	%mklibname gnomecanvas %{api_version} %{lib_major}
+%define libnamedev %mklibname -d gnomecanvas %{api_version}
 
 Summary:	GnomeCanvas widget
 Name:		libgnomecanvas
-Version: 2.19.1
-Release: %mkrel 3
+Version: 2.19.2
+Release: %mkrel 1
 License:	LGPL
 Group:		Graphical desktop/GNOME
 URL:		http://www.gnome.org/
@@ -45,9 +46,9 @@ BuildRequires:	perl-XML-Parser
 BuildRequires:	gtk-doc
 %endif
 %if %install_demo
-Requires:	%{lib_name} = %{version}-%{release}
+Requires:	%{libname} = %{version}-%{release}
 %endif
-Conflicts: %lib_name < 2.19.1-2mdv2008.0
+Conflicts: %libname < 2.19.1-2mdv2008.0
 
 %description
 The GNOME canvas is an engine for structured graphics that offers a rich
@@ -58,7 +59,7 @@ antialiased, alpha-compositing engine. Applications have a choice between
 the Xlib imaging model or a superset of the PostScript imaging model,
 depending on the level of graphic sophistication required.
 
-%package -n %{lib_name}
+%package -n %{libname}
 Summary:	%{summary}
 Group:		%{group}
 Provides:	%{name}%{api_version} = %{version}-%{release}
@@ -68,7 +69,7 @@ Requires:	libpango >= %{req_pango_version}
 Requires:	libglade2.0 >= %{req_libglade_version}
 Requires:	%name >= %version
 
-%description -n %{lib_name}
+%description -n %{libname}
 The GNOME canvas is an engine for structured graphics that offers a rich
 imaging model, high performance rendering, and a powerful, high-level API.
 It offers a choice of two rendering back-ends, one based on Xlib for
@@ -80,15 +81,16 @@ depending on the level of graphic sophistication required.
 This package contains the main canvas library.
 
 
-%package -n %{lib_name}-devel
+%package -n %{libnamedev}
 Summary:	Development libraries and include files for GnomeCanvas widget
 Group:		Development/GNOME and GTK+
 Provides:	%{name}%{api_version}-devel = %{version}-%{release}
-Requires:	%{lib_name} = %{version}
+Requires:	%{libname} = %{version}
 Requires:	libgtk+2-devel >= %{req_gtk_version}
 Requires:	libart_lgpl-devel >= %{req_libart_version}
+Obsoletes:  %mklibname -d gnomecanvas %{api_version} %{lib_major}
 
-%description -n %{lib_name}-devel
+%description -n %{libnamedev}
 The GNOME canvas is an engine for structured graphics that offers a rich
 imaging model, high performance rendering, and a powerful, high-level API.
 It offers a choice of two rendering back-ends, one based on Xlib for
@@ -133,9 +135,9 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/libglade/2.0/*.{la,a}
 %clean
 rm -rf %{buildroot}
 
-%post -n %{lib_name} -p /sbin/ldconfig
+%post -n %{libname} -p /sbin/ldconfig
 
-%postun -n %{lib_name} -p /sbin/ldconfig
+%postun -n %{libname} -p /sbin/ldconfig
 
 %if %install_demo
 %files
@@ -145,12 +147,12 @@ rm -rf %{buildroot}
 
 %files  -f %{name}-2.0.lang
 
-%files -n %{lib_name}
+%files -n %{libname}
 %defattr(-,root,root)
-%{_libdir}/lib*.so.*
+%{_libdir}/libgnomecanvas-%{api_version}.so.%{lib_major}*
 %{_libdir}/libglade/2.0/*.so
 
-%files -n %{lib_name}-devel
+%files -n %{libnamedev}
 %defattr(-,root,root)
 %doc ChangeLog NEWS README AUTHORS
 %doc %{_datadir}/gtk-doc/html/*
