@@ -28,7 +28,7 @@
 Summary:	GnomeCanvas widget
 Name:		libgnomecanvas
 Version: 2.20.0
-Release: %mkrel 1
+Release: %mkrel 2
 License:	LGPL
 Group:		Graphical desktop/GNOME
 URL:		http://www.gnome.org/
@@ -89,6 +89,7 @@ Requires:	%{libname} = %{version}
 Requires:	libgtk+2-devel >= %{req_gtk_version}
 Requires:	libart_lgpl-devel >= %{req_libart_version}
 Obsoletes:  %mklibname -d gnomecanvas %{api_version} %{lib_major}
+Provides:  %mklibname -d gnomecanvas %{api_version} %{lib_major}
 
 %description -n %{libnamedev}
 The GNOME canvas is an engine for structured graphics that offers a rich
