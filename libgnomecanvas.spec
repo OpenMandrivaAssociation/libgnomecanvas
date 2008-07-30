@@ -29,7 +29,7 @@ Summary:	GnomeCanvas widget
 Name:		libgnomecanvas
 Version: 2.20.1.1
 Release: %mkrel 3
-License:	LGPL
+License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.gnome.org/
 Buildroot:	%{_tmppath}/%{name}-%{version}-buildroot
@@ -41,7 +41,7 @@ BuildRequires:	libart_lgpl-devel >= %{req_libart_version}
 BuildRequires:	libpango-devel >= %{req_pango_version}
 BuildRequires:	libglade2.0-devel >= %{req_libglade_version}
 BuildRequires:	libgail-devel
-BuildRequires:	perl-XML-Parser
+BuildRequires:	intltool
 %if %enable_gtkdoc
 BuildRequires:	gtk-doc
 %endif
@@ -116,7 +116,7 @@ This package contains static library and header files for %{name}.
 	--enable-gtk-doc=no
 %endif
 
-%make
+%make LIBS=-lm
 
 %install
 rm -rf %{buildroot}
