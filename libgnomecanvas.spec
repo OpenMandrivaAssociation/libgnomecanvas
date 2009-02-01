@@ -27,8 +27,8 @@
 
 Summary:	GnomeCanvas widget
 Name:		libgnomecanvas
-Version: 2.20.1.1
-Release: %mkrel 4
+Version: 2.25.90
+Release: %mkrel 1
 License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.gnome.org/
