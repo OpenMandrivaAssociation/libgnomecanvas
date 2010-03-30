@@ -27,8 +27,8 @@
 
 Summary:	GnomeCanvas widget
 Name:		libgnomecanvas
-Version: 2.26.0
-Release: %mkrel 3
+Version: 2.30.0
+Release: %mkrel 1
 License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.gnome.org/
@@ -39,7 +39,7 @@ BuildRequires:	bison
 BuildRequires:	libgtk+2-devel >= %{req_gtk_version}
 BuildRequires:	libart_lgpl-devel >= %{req_libart_version}
 BuildRequires:	libpango-devel >= %{req_pango_version}
-BuildRequires:	libglade2.0-devel >= %{req_libglade_version}
+#BuildRequires:	libglade2.0-devel >= %{req_libglade_version}
 BuildRequires:	libgail-devel
 BuildRequires:	intltool
 %if %enable_gtkdoc
@@ -68,7 +68,7 @@ Provides:	%{name}%{api_version} = %{version}-%{release}
 Requires:	libart_lgpl >= %{req_libart_version}
 Requires:	libgtk+2 >= %{req_gtk_version}
 Requires:	libpango >= %{req_pango_version}
-Requires:	libglade2.0 >= %{req_libglade_version}
+#Requires:	libglade2.0 >= %{req_libglade_version}
 Requires:	%name >= %version
 
 %description -n %{libname}
@@ -157,7 +157,7 @@ rm -rf %{buildroot}
 %files -n %{libname}
 %defattr(-,root,root)
 %{_libdir}/libgnomecanvas-%{api_version}.so.%{lib_major}*
-%{_libdir}/libglade/2.0/*.so
+#%{_libdir}/libglade/2.0/*.so
 
 %files -n %{libnamedev}
 %defattr(-,root,root)
