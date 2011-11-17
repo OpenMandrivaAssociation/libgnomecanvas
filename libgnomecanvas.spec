@@ -1,3 +1,4 @@
+%define api_version	2
 %define lib_major	0
 %define libname	%mklibname gnomecanvas %{api_version} %{lib_major}
 %define libnamedev %mklibname -d gnomecanvas %{api_version}
@@ -17,6 +18,7 @@ BuildRequires: pkgconfig(gail) >= 1.9.0
 BuildRequires: pkgconfig(glib-2.0) >= 2.10.0
 BuildRequires: pkgconfig(gtk+-2.0) >= 2.2.0
 BuildRequires: pkgconfig(libart-2.0) >= 2.3.8
+BuildRequires: pkgconfig(libpng12)
 BuildRequires: pkgconfig(pango) >= 1.0.1
 BuildRequires: pkgconfig(pangoft2) >= 1.0.1
 
