@@ -6,7 +6,7 @@
 Summary:	GnomeCanvas widget
 Name:		libgnomecanvas
 Version:	2.30.3
-Release:	4
+Release:	5
 License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.gnome.org/
@@ -53,8 +53,8 @@ Summary:	Development libraries and include files for GnomeCanvas widget
 Group:		Development/GNOME and GTK+
 Provides:	%{name}%{api_version}-devel = %{version}-%{release}
 Requires:	%{libname} = %{version}
-Obsoletes:  %mklibname -d gnomecanvas %{api_version} %{lib_major}
-Provides:  %mklibname -d gnomecanvas %{api_version} %{lib_major}
+Obsoletes:	%mklibname -d gnomecanvas %{api_version} %{lib_major}
+Provides:	%mklibname -d gnomecanvas %{api_version} %{lib_major}
 
 %description -n %{libnamedev}
 The GNOME canvas is an engine for structured graphics that offers a rich
@@ -65,7 +65,7 @@ antialiased, alpha-compositing engine. Applications have a choice between
 the Xlib imaging model or a superset of the PostScript imaging model,
 depending on the level of graphic sophistication required.
 
-This package contains static library and header files for %{name}.
+This package contains development library and header files for %{name}.
 
 %prep
 %setup -q
