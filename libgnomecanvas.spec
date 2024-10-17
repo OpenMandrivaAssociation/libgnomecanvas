@@ -9,7 +9,7 @@ Version:	2.30.3
 Release:	20
 License:	LGPLv2+
 Group:		System/Libraries
-Url:		http://www.gnome.org/
+Url:		https://www.gnome.org/
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 
 BuildRequires:	bison
